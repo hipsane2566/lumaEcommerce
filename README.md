@@ -8,3 +8,4 @@ Visual testing is a software testing technique that aims to verify the visual as
 Percy is an all-in-one visual testing and review platform It is to assist teams in automating manual QA processes, enabling the detection of visual bugs, and providing valuable insights into UI changes with each commit.
 
 Percy supports visual testing of web applications on desktop and mobile browsers.
+https://percy.io/d904edc3/lumaECOmmerce/builds/32932602
