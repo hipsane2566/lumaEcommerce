@@ -29,6 +29,7 @@ public class BaseClass {
 	//public WebDriver driver;// parallel testing
 	public Logger log;
 	public Properties p;
+	//Percy class selenium webdriver IO
 	public static Percy percy;
 	
 	//"regression"
@@ -77,6 +78,7 @@ public class BaseClass {
 			default: System.out.println("No matching browser"); return;
 			}
 		}
+		//percy object
 		percy = new Percy(driver);
 		driver.manage().deleteAllCookies();
 		driver.get(p.getProperty("appURL"));
