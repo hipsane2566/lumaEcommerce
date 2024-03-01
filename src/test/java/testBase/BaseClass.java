@@ -22,15 +22,19 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.*;
 
+import io.percy.selenium.Percy;
+
 public class BaseClass {
 	static public WebDriver driver;
 	//public WebDriver driver;// parallel testing
 	public Logger log;
 	public Properties p;
+	public static Percy percy;
 	
-	@BeforeClass(groups= {"sanity","regression"})
+	//"regression"
+	@BeforeClass(groups= {"sanity"})
 	@Parameters({"browser","OS"})
-	public void setup(String br, String os) throws IOException {
+	public void setup(@Optional("chrome") String br , @Optional("Windows") String os ) throws IOException {
 		//loading properties file
 		FileReader file = new FileReader(".//src/test/resources/config.properties");
 		p = new Properties();
@@ -73,11 +77,12 @@ public class BaseClass {
 			default: System.out.println("No matching browser"); return;
 			}
 		}
-		
+		percy = new Percy(driver);
 		driver.manage().deleteAllCookies();
 		driver.get(p.getProperty("appURL"));
 		driver.manage().window().maximize();
 	}
+	
 	
 	@AfterClass(groups= {"sanity","regression"})
 	public void tearDown() {
