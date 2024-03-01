@@ -29,7 +29,7 @@ public class BaseClass {
 	//public WebDriver driver;// parallel testing
 	public Logger log;
 	public Properties p;
-	//Percy class selenium webdriver IO
+	//Percy client for visual testing.
 	public static Percy percy;
 	
 	//"regression"
