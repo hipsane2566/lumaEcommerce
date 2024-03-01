@@ -20,7 +20,7 @@ public class AccountRegisterationTest extends BaseClass {
 			
 			log.info("*******Clicked on CreateAccount*******");
 			homepage.clickCreateAccount();
-			
+			percy.snapshot("navigate to account register page");
 			//Enter firstname, lastname, email address and password
 			RegistrationPage registerPage = new RegistrationPage(driver);
 			log.info("*******Entering Registration Form Details*******");
@@ -37,6 +37,7 @@ public class AccountRegisterationTest extends BaseClass {
 			registerPage.clickCreateAccount();
 			
 			implicitWaits();
+			percy.snapshot("After Login");
 			String confirmMsg = registerPage.getConfirmationMsg();
 			String expMsg = "Thank you for registering with Main Website Store.";
 			if(confirmMsg.equals(expMsg)) {
